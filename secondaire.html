@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Rendez-vous</title>
+    <link rel="stylesheet" href="RDV.css">
+</head>
+<body>
+
+<header>
+    <h1>Gestion des Rendez-vous en ligne</h1>
+    <p>Admin crée les créneaux, utilisateur réserve un créneau disponible</p>    
+</header>
+
+<main>
+
+    <section class="box">
+        <h2> Admin : Ajouter un créneau</h2>
+
+        <form id="formCreneau">
+            <label>Date</label>
+            <input type="date" id="dateCreneau" required>
+
+            <label>Heure</label>
+            <input type="time" id="heureCreneau" required>
+
+            <button type="submit" onclick="return prompt ('Mot de passe admin :')=='1234'">Ajouter</button>
+        </form>
+    </section>
+
+    <section class="box">
+        <h2> Liste des créneaux</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody id="tableCreneaux">
+            </tbody>
+        </table>
+    </section>
+
+   
+    <section class="box">
+        <h2> Utilisateur : Réserver un rendez-vous</h2>
+
+        <form id="formReservation">
+            <label>Nom complet</label>
+            <input type="text" id="nomClient" placeholder="Entrez votre nom" required>
+
+            <label>Choisir un créneau disponible</label>
+            <select id="selectCreneau" required>
+                <option value="">-- Sélectionner --</option>
+            </select>
+
+            <button type="submit">Réserver</button>
+        </form>
+    </section>
+
+    <section class="box">
+        <h2> Liste des réservations</h2>
+
+        <ul class="reservations" id="listeReservations">
+
+        </ul>
+    </section>
+
+</main>
+<footer>
+    <p>© 2026 - Gestion des rendez-vous</p>
+</footer>
+
+<script src="RDV.js"></script>
+</body>
+</html>
+
